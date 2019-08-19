@@ -1,0 +1,20 @@
+body {
+  background-color: #fafafa;
+}
+
+.posts {
+  float: left;
+  width: 35%;
+  margin-left: 30%;
+}
+
+.stories {
+  float: left;
+  width: 13%;
+  margin-left: 3%;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  justify-content: flex-start;
+}

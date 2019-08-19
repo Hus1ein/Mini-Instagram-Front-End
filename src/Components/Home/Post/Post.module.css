@@ -1,0 +1,103 @@
+
+.post {
+    background-color: #ffffff;
+    width: 100%;
+    margin-top: 50px;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    /*z-index: -1; !* hide shadow behind image *!
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);*/
+}
+
+.postHeader {
+    width: 100%;
+}
+
+.postPhoto {
+    width: 100%;
+    height: 500px;
+}
+
+.postHeaderPhoto {
+    float: left;
+    margin: 10px 10px 10px 15px;
+    border-radius: 50%;
+}
+
+.postHeaderUsername {
+    float: left;
+    margin-top: 19px;
+    font-size: 17px;
+}
+
+.fa-heart, .fa-comment {
+    font-size: 25px;
+}
+
+.postLikeIcon {
+    float: left;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+.postCommentIcon {
+    float: left;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+.postSaveIcon {
+    margin-left: auto;
+    margin-right: -10px;
+}
+
+.postDeleteFloat {
+    clear: left;
+}
+
+.postLikesNumber {
+    margin-left: 15px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+
+.postDescriptionUsername {
+    font-weight: bold;
+}
+
+.postDescription {
+    margin-left: 15px;
+    margin-top: 0px;
+    margin-bottom: 7px;
+}
+
+.postCreatedAt {
+    margin-left: 15px;
+    margin-top: 0px;
+    margin-bottom: 7px;
+    font-size: 15px;
+    color: #8c8c8c;
+}
+
+.postNewComment {
+    border: 0;
+    width: 96%;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 7px;
+    margin-bottom: 0px;
+}
+
+.postNewComment:focus {
+    outline: none;
+}
+
+.postHorizontalLine {
+    margin-left: 15px;
+    margin-right: 15px;
+    border-color: #f2f2f2;
+}
+
+.postHeartRed {
+    color: red;
+}

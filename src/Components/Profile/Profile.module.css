@@ -1,0 +1,105 @@
+
+.body {
+    background: white;
+}
+
+.menuMargin {
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.main {
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: -20px;
+    padding-top: 50px;
+}
+
+.header {
+    margin-top: 70px;
+}
+
+.headerLeft {
+    width: 30%;
+    float: left;
+}
+
+.headerRight {
+    width: 70%;
+    float: left;
+}
+
+.userPhoto {
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.username {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.postsFollowersFollowings {
+    height: 30px;
+    line-height: 30px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 17px;
+}
+
+.postsNumber {
+    float: left;
+}
+
+.followersNumber {
+    float: left;
+    margin-left: 30px;
+}
+
+.followingsNumber {
+    float: left;
+    margin-left: 30px;
+}
+
+.userDescription {
+    font-size: 19px;
+}
+
+.stories {
+    overflow:auto;
+    white-space: nowrap; /* important to user it */
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.story {
+    margin-left: 20px;
+    display: inline-block;
+}
+
+.posts {
+    margin-top: 40px;
+    margin-bottom: 60px;
+}
+
+.post {
+    margin-bottom: 20px;
+}
+
+.removeFloat {
+    clear: left;
+}
+
+hr.horizontalLine {
+    margin-top: 40px;
+    border-top: 1px solid #d9d9d9;
+}
+
+.postsAndSavedButtons {
+    width: 100%;
+}

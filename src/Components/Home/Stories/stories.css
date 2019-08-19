@@ -1,0 +1,21 @@
+
+.stories-body {
+    background-color: #ffffff;
+    width: 100%;
+    margin-top: 50px;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+}
+
+.stories-scroll {
+    height: 250px;
+    overflow:scroll;
+    overflow-x:hidden;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.stories-title {
+    color: #999;
+    margin-left: 15px;
+}

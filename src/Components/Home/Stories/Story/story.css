@@ -1,0 +1,36 @@
+
+.story-left-side {
+    float: left;
+    margin: 0px;
+    padding: 0px;
+}
+
+.story-right-side {
+    float: left;
+}
+
+.story-username {
+    margin-top: 13px;
+    margin-bottom: 0px;
+    font-size: 15px;
+}
+
+.story-created-at {
+    margin-top: 4px;
+    font-size: 11px;
+    color: #8c8c8c;
+}
+
+.rounded-img {
+    border-radius: 50%;
+}
+
+.story-photo {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+.story-delete-float {
+    clear: left;
+}
