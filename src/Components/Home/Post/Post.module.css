@@ -2,7 +2,7 @@
 .post {
     background-color: #ffffff;
     width: 100%;
-    margin-top: 50px;
+    margin-bottom: 50px;
     border: 1px solid #e6e6e6;
     border-radius: 3px;
     /*z-index: -1; !* hide shadow behind image *!
@@ -82,10 +82,7 @@
 .postNewComment {
     border: 0;
     width: 96%;
-    margin-left: 2%;
-    margin-right: 2%;
-    margin-top: 7px;
-    margin-bottom: 0px;
+    margin: 7px 2% 0px;
 }
 
 .postNewComment:focus {

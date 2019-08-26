@@ -1,0 +1,39 @@
+
+.posts {
+    float: left;
+    width: 70%;
+    margin-top: 50px;
+}
+
+.rightSide {
+    float: left;
+    width: 28%;
+    margin-left: 2%;
+}
+
+.userPhoto {
+    border-radius: 50%;
+}
+
+.username {
+    font-size: 16px;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.removeFloat {
+    clear: left;
+}
+
+.userPhotoAndName {
+    float: left;
+    margin-top: 50px;
+}
+
+.newPostButton {
+    width: 100%;
+    margin-bottom: 20px;
+}

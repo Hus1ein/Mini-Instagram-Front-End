@@ -28,43 +28,6 @@ class Profile extends Component{
 
         return (
             <div className={styles.body}>
-
-                <nav className="navbar navbar-default navbar-fixed-top">
-
-                    <div className={styles.menuMargin}>
-                    <div className="container-fluid">
-
-                        <div className="navbar-header">
-                            <button type="button" className="navbar-toggle collapsed" data-toggle="collapse"
-                                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                                <span className="sr-only">Toggle navigation</span>
-                                <span className="icon-bar"/>
-                                <span className="icon-bar"/>
-                                <span className="icon-bar"/>
-                            </button>
-                            <a className="navbar-brand" href="#">Mini Instagram</a>
-                        </div>
-
-
-                        <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-                            <ul className="nav navbar-nav navbar-right">
-                                <li>
-                                    <form className="navbar-form">
-                                        <div className="form-group">
-                                            <input type="text" className="form-control" placeholder="Search"/>
-                                        </div>
-                                        <button type="submit" className="btn btn-default">Submit</button>
-                                    </form>
-                                </li>
-                                <li><a href="#">Explore</a></li>
-                                <li><a href="#">Profile</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    </div>
-                </nav>
-
                 <div className={styles.main}>
                     <header className={styles.header}>
                         <div className={styles.headerLeft}>
