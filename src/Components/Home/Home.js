@@ -4,6 +4,7 @@ import styles from "./Home.module.css";
 import photo from "../../Photos/photo.jpeg";
 import Stories from "./Stories/Stories";
 import CreatePostModal from "../Modal/CreatePost/CreatePostModal";
+import axios from "../../Enviroments/axiosDev";
 
 class Home extends Component {
 
@@ -24,14 +25,54 @@ class Home extends Component {
         });
     };
 
-    createPost = () => {
+    createPost = (image, text) => {
         this.setState({
             "show": false
         });
+
+        var formData = new FormData();
+        formData.append("upload", image);
+        axios.otherRequest.post('test/images?type=POST', formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            }
+        }).then(result => {
+            axios.otherRequest.post('posts/', {
+                content: text,
+                picture: result.data.id
+            })
+                .then(function (response) {
+                    console.log(response);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        })
+
     };
 
     getPosts = () => {
-        let postObject= {
+
+        axios.otherRequest.get('posts/').then(result => {
+            console.log(result.data);
+            let posts = [];
+            for (let i = 0; i < result.data.length; i++) {
+                let post = (
+                    <Post
+                        postData={result.data[i]}
+                    />
+                );
+                posts.push(post);
+            }
+
+            this.setState({
+                posts: posts
+            });
+        }).catch(error => {
+            console.log(error)
+        });
+
+        /*let postObject= {
             id: "12345",
             userId: "12345678",
             user: {
@@ -59,29 +100,20 @@ class Home extends Component {
 
         this.setState({
             posts: posts
-        });
+        });*/
+
+
     };
 
     render() {
         return (
             <div>
 
-                <CreatePostModal show={this.state.show} cancel={this.closeDialog} submit={this.createPost}/>
+                <CreatePostModal className={styles.modal} show={this.state.show} cancel={this.closeDialog} submit={this.createPost}/>
 
                 <div className={styles.posts}>
                     <button className={`${styles.newPostButton} ${"btn"} ${"btn-default"}`} onClick={this.openDialog}>Create post</button>
                     {this.state.posts}
-                </div>
-
-                <div className={styles.rightSide}>
-                    <div className={styles.userPhotoAndName}>
-                        <img src={photo} width="50px" height="50px" className={styles.userPhoto}/>
-                    </div>
-                    <div className={styles.userPhotoAndName}>
-                        <p className={styles.username}>husein_1abd</p>
-                    </div>
-                    <div className={styles.removeFloat}/>
-                    <Stories/>
                 </div>
 
                 <div className={styles.removeFloat}/>

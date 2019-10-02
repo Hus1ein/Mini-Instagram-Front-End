@@ -1,0 +1,30 @@
+
+.main {
+    height: 80px;
+    background: #eff0f6;
+    margin-top: 20px;
+    border-radius: 4px;
+}
+
+.userPhoto {
+    border-radius: 50%;
+    display: block;
+    float: left;
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+.username {
+    height: 40px;
+    line-height: 40px;
+    float: left;
+    margin-left: 30px;
+    margin-top: 20px;
+}
+
+.follow {
+    float: right;
+    margin-right: 40px;
+    margin-top: 20px;
+    height: 40px;
+}

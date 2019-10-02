@@ -23,13 +23,12 @@
     background: #fefefe;
     border: #333333 solid 0px;
     border-radius: 5px;
-    margin-left: -200px;
     text-align:center;
     position: fixed;
-    left: 50%;
+    left: 25%;
     top: -100%;
     z-index: 11;
-    width: 360px;
+    width: 50%;
     box-shadow:0 5px 10px rgba(0,0,0,0.3);
     -webkit-transform: translate(0, -500%);
     -ms-transform: translate(0, -500%);

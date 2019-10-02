@@ -2,3 +2,12 @@
 .body {
     margin: 40px;
 }
+
+.btnSubmit {
+    width: 49%;
+    margin-right: 2%;
+}
+
+.btnCancel {
+    width: 49%;
+}
