@@ -1,25 +1,55 @@
 import React, { Component } from 'react';
 import styles from './Post.module.css';
-import photo from '../../../Photos/photo.jpeg';
-import photo1 from '../../../Photos/photo1.jpg';
-import photo2 from '../../../Photos/photo2.jpg';
-import photo3 from '../../../Photos/photo3.jpg';
 import defaultPhoto from "../../../Photos/user_default.png";
+import axios from "../../../Enviroments/axiosDev";
+import {Link} from "react-router-dom";
 
 class Post extends Component {
     state = {
-        "likeIcon": <i className="far fa-heart"></i>
+        likeIcon:  <i className="fa fa-heart-o"/>,
+        liked: false,
+        likesNumber: this.props.postData.likedBy.length
     };
 
+    componentWillMount() {
+        let userId = localStorage.getItem("id");
+
+        for (let i=0; i < this.props.postData.likedBy.length; i++) {
+            if (this.props.postData.likedBy[i] === userId) {
+
+                this.setState({
+                    likeIcon:  <i className="fa fa-heart"/>,
+                    liked: true
+                });
+                break;
+            }
+        }
+    }
+
     onLikeClickHandler = () => {
-        this.setState({
-            "likeIcon": <i className="far fa-heart post-heart-red" aria-hidden="true"></i>
-        });
+        let likesNum =  this.state.likesNumber;
+        if (this.state.liked === false) {
+            this.setState({
+                likeIcon:  <i className="fa fa-heart"/>,
+                liked: true,
+                likesNumber: likesNum + 1
+            });
+
+            axios.otherRequest.get('posts/like?postId=' + this.props.postData.id);
+
+        } else {
+            this.setState({
+                likeIcon:  <i className="fa fa-heart-o"/>,
+                liked: false,
+                likesNumber: likesNum -1
+            });
+
+            axios.otherRequest.get('posts/remove-like?postId=' + this.props.postData.id);
+        }
     };
 
     render() {
 
-        let photos = [photo, photo1, photo2, photo3];
 
         let date = new Date(this.props.postData.lastModified);
         let userPhoto = defaultPhoto;
@@ -35,22 +65,22 @@ class Post extends Component {
             <div className={styles.post}>
                 <div className={styles.postHeader}>
                     <img src={userPhoto} width="40px" height="40px" className={styles.postHeaderPhoto} id="side-bar-profile-image"/>
-                    <p className={styles.postHeaderUsername}>{this.props.postData.user.name}</p>
+                    <Link to={"/main/profile/" + this.props.postData.user.id}><p className={styles.postHeaderUsername}>{this.props.postData.user.name}</p></Link>
                 </div>
                 <img className={styles.postPhoto} src={picture}/>
                 <div>
-                    <div className={styles.postLikeIcon} onClick={this.onLikeClickHandler}><i className="fa fa-heart-o"/></div>
+                    <div className={styles.postLikeIcon} onClick={this.onLikeClickHandler}>{this.state.likeIcon}</div>
                     <div className={styles.postDeleteFloat}></div>
                 </div>
                 <div>
-                    <p className={styles.postLikesNumber}>{this.props.postData.likedBy.length} Likes</p>
+                    <p className={styles.postLikesNumber}>{this.state.likesNumber} Likes</p>
                     <p className={styles.postDescription}>
                         <span className={styles.postDescriptionUsername}>{this.props.postData.user.name} </span>
                         {this.props.postData.content}
                     </p>
                     <p className={styles.postCreatedAt}>{date.toUTCString()}</p>
-                    <hr className={styles.postHorizontalLine}/>
-                    <textarea className={styles.postNewComment} placeholder="Add a comment..."/>
+                    {/*<hr className={styles.postHorizontalLine}/>
+                    <textarea className={styles.postNewComment} placeholder="Add a comment..."/>*/}
                 </div>
             </div>
         );

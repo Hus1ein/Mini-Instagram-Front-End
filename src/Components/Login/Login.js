@@ -13,7 +13,7 @@ class Login extends Component {
         'errors': undefined
     };
 
-    onLoginClickHandler = async (event) => {
+    onLoginClickHandler = (event) => {
         event.preventDefault();
         let username = this.state.username;
         let password = this.state.password;
@@ -35,7 +35,8 @@ class Login extends Component {
                 localStorage.setItem('token', response.data.token);
                 localStorage.setItem('id', response.data.id);
                 this.props.changeAuthentication(true);
-                this.props.history.push("/");
+                this.props.history.push("/main");
+                window.location.reload();
             }).catch(error => {
                 this.setState({'errors': "Error: Check inputs and try again."});
             });

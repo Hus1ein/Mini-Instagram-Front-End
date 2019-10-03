@@ -1,7 +1,6 @@
 import axios from 'axios';
 
 let savedToken = localStorage.getItem('token');
-console.log(savedToken);
 
 let instance = {
 

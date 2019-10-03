@@ -33,6 +33,11 @@
     width: 100% !important;
 }
 
+#submit-sign-up {
+    margin-top: 10px !important;
+    width: 100% !important;
+}
+
 #errors {
     color: red;
     font-size: 17px;

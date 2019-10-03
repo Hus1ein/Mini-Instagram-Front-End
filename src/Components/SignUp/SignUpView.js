@@ -1,14 +1,13 @@
 import React from 'react';
-import {Link} from "react-router-dom";
 
-const loginView = (props) => {
+const SignUpView = (props) => {
 
     return (
         <div id="login-view-main">
 
             <div className="my-container-log-in">
 
-                <h1>Log in</h1>
+                <h1>Sign up</h1>
                 <div className="input-form">
                     <form>
 
@@ -22,6 +21,14 @@ const loginView = (props) => {
                         </div>
 
                         <div className="form-group">
+                            <label htmlFor="name">Name</label>
+                            <div className="input-group">
+                                <div className="input-group-addon"><i className="fa fa-user"/></div>
+                                <input id="name" className="form-control input-lg" type="text" onChange={props.onNameChangeHandler} placeholder="Name" maxLength="30"/>
+                            </div>
+                        </div>
+
+                        <div className="form-group">
                             <label htmlFor="password">Password</label>
                             <div className="input-group">
                                 <div className="input-group-addon"><i className="fa fa-lock"/></div>
@@ -29,8 +36,7 @@ const loginView = (props) => {
                             </div>
                         </div>
 
-                        <button id="submit-log-in" className="btn btn-success btn-lg" onClick={props.onLoginclickHandler}>Log in</button>
-                        <Link id="" to="/register"><button id="submit-sign-up" className="btn btn-success btn-lg">Sign up</button></Link>
+                        <button id="submit-log-in" className="btn btn-success btn-lg" onClick={props.onSignUp}>Sign up</button>
 
                     </form>
                 </div>
@@ -41,4 +47,4 @@ const loginView = (props) => {
 
 };
 
-export default loginView;
+export default SignUpView;

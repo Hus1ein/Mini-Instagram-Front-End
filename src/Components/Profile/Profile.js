@@ -111,14 +111,7 @@ class Profile extends Component{
                     </header>
 
                     <div className={styles.postsAndSaved}>
-                        <div className="row">
-                            <div className="col-sm-6">
-                                <button className={`${styles.postsAndSavedButtons} ${"btn"} ${"btn-success"}`}>Posts</button>
-                            </div>
-                            <div className="col-sm-6">
-                                <button className={`${styles.postsAndSavedButtons} ${"btn"} ${"btn-info"}`}>Saved</button>
-                            </div>
-                        </div>
+
                     </div>
 
                     {/*Posts section*/}

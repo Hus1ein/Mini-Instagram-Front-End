@@ -10,7 +10,12 @@ import Settings from "./Settings/Settings";
 
 class Main extends React.Component {
 
-
+    logOut = () => {
+        localStorage.removeItem('token');
+        localStorage.removeItem('id');
+        this.props.history.push("/main");
+        window.location.reload();
+    };
 
     render() {
         let savedId = localStorage.getItem('id');
@@ -28,16 +33,17 @@ class Main extends React.Component {
                                     <span className="icon-bar"/>
                                     <span className="icon-bar"/>
                                 </button>
-                                <div className={`${"navbar-brand"} ${styles.navBarAppName}`}><Link to="/">Mini Instagram</Link></div>
+                                <div className={`${"navbar-brand"} ${styles.navBarAppName}`}><Link to="/main">Mini Instagram</Link></div>
                             </div>
 
 
                             <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
                                 <ul className="nav navbar-nav navbar-right">
-                                    <li><Link to="/explore">Explore</Link></li>
-                                    <li><Link to={"/profile/" + savedId}>Profile</Link></li>
-                                    <li><Link to="/settings">Settings</Link></li>
+                                    <li><Link to="/main/explore">Explore</Link></li>
+                                    <li><Link to={"/main/profile/" + savedId}>Profile</Link></li>
+                                    <li><Link to="/main/settings">Settings</Link></li>
+                                    <li onClick={this.logOut}><Link to="">Log out</Link></li>
                                 </ul>
                             </div>
                         </div>
@@ -46,10 +52,10 @@ class Main extends React.Component {
 
 
                 <div className={styles.belowMenuSection}>
-                    <Route path="/" exact component={Home}/>
-                    <Route path="/explore" exact component={Explore}/>
-                    <Route path="/profile/:id" exact component={Profile}/>
-                    <Route path="/settings" exact component={Settings}/>
+                    <Route path="/main" exact component={Home}/>
+                    <Route path="/main/explore" exact component={Explore}/>
+                    <Route path="/main/profile/:id" exact component={Profile}/>
+                    <Route path="/main/settings" exact component={Settings}/>
                 </div>
 
             </div>

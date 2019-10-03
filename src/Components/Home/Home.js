@@ -29,6 +29,7 @@ class Home extends Component {
         this.setState({
             "show": false
         });
+        let self = this;
 
         var formData = new FormData();
         formData.append("upload", image);
@@ -42,7 +43,17 @@ class Home extends Component {
                 picture: result.data.id
             })
                 .then(function (response) {
-                    console.log(response);
+                    let posts = self.state.posts;
+                    console.log(posts);
+                    posts.unshift(<Post key={response.data.id}
+                        postData={response.data}
+                    />);
+                    console.log(posts);
+                    self.setState({
+                        posts: posts
+                    })
+                    console.log(self.state.posts);
+                    window.location.reload();
                 })
                 .catch(function (error) {
                     console.log(error);
@@ -58,7 +69,7 @@ class Home extends Component {
             let posts = [];
             for (let i = 0; i < result.data.length; i++) {
                 let post = (
-                    <Post
+                    <Post key={result.data[i].id}
                         postData={result.data[i]}
                     />
                 );

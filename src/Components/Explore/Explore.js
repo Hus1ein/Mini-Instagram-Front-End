@@ -48,7 +48,7 @@ class Explore extends Component {
         let users = [];
         for(let i = 0; i < this.state.users.length; i++) {
             users.push(
-                <Link to={"/profile/" + this.state.users[i].id} key={this.state.users[i].id}>
+                <Link to={"/main/profile/" + this.state.users[i].id} key={this.state.users[i].id}>
                     <div>
                         <UserRow data={this.state.users[i]} onFollowClickHandler={this.onFollowClickHandler}/>
                     </div>
